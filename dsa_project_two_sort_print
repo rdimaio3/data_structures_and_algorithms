@@ -1,0 +1,16 @@
+void BinarySearchTree::inOrder(Node* node) {
+    if (root == nullptr) {
+        cout << "There are no courses loaded yet. Please go back and load courses with option 1." << endl;
+    }
+    else {
+        //if node is not equal to null ptr
+        if (node != nullptr) {
+            //InOrder left
+            inOrder(node->left);
+            //output courseNumber, courseName, prerequisite1, prerequisite2
+            cout << node->course.courseNumber << ", " << node->course.courseName << endl;
+            //InOrder right
+            inOrder(node->right);
+        }
+    }
+}
